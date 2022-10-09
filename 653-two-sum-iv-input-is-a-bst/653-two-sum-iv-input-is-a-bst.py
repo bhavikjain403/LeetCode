@@ -7,8 +7,8 @@
 class Solution:
     def recur(self,root,a,k):
         if not root:
-            return False
-        if (k-root.val) in a:
+            return None
+        if k-root.val in a:
             return True
         a.add(root.val)
         return self.recur(root.left,a,k) or self.recur(root.right,a,k)
