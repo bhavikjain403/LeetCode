@@ -5,7 +5,7 @@ class Solution:
         ans=max(arr)-min(arr)
         arr.sort()
         small,large=arr[0]+k,arr[n-1]-k
-        for i in range(1,n):
+        for i in range(n):
             if arr[i]<k:
                 continue
             minH=min(small,arr[i]-k)
