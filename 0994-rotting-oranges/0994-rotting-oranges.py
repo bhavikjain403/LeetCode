@@ -40,11 +40,10 @@ class Solution:
             ans=max(ans,t)
             for d in range(4):
                 nx,ny=x+dx[d],y+dy[d]
-                if 0<=nx<n and 0<=ny<m and ((nx,ny) not in vis):
+                if 0<=nx<n and 0<=ny<m and grid[nx][ny]==1:
                     vis.add((nx,ny))
-                    if grid[nx][ny]==1:
-                        q.append((nx,ny,t+1))
-                        grid[nx][ny]=2
+                    q.append((nx,ny,t+1))
+                    grid[nx][ny]=2
         for i in range(n):
             for j in range(m):
                 if grid[i][j]==1:
