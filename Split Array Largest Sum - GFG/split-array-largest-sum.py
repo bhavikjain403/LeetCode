@@ -2,31 +2,29 @@
 
 class Solution:
     def valid(self,mid,arr,k):
-        ans=0
         count=0
+        ans=0
         for i in arr:
             if i>mid:
                 return False
             ans+=i
             if ans>mid:
-                count+=1
                 ans=i
+                count+=1
         count+=1
-        if count<=k:
-            return True
-        return False
+        return count<=k
     
     def splitArray(self, arr, N, K):
         start,end=max(arr),sum(arr)
-        answer=0
+        ans=0
         while start<=end:
             mid=(start+end)//2
             if self.valid(mid,arr,K):
+                ans=mid
                 end=mid-1
-                answer=mid
             else:
                 start=mid+1
-        return answer
+        return ans
 
 
 #{ 
